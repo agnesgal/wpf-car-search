@@ -16,7 +16,7 @@ namespace WpfApp1
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-            ConfigurationSettings.AppSettings["DataPath"] = e.Args[0];
+            ConfigurationManager.AppSettings["DataPath"] = e.Args[0];
 
             new MainWindow().Show();
         }

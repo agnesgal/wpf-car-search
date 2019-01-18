@@ -3,61 +3,61 @@
   <car>
     <Type>Chevrolet Camaro</Type>
     <PlateNumber>Q4U 5H5</PlateNumber>
-    <Color>red</Color>
+    <Color>Red</Color>
     <Driver>Deacon Schwartz</Driver>
   </car>
   <car>
     <Type>Jaguar XJS</Type>
     <PlateNumber>G4S 3A8</PlateNumber>
-    <Color>opal</Color>
+    <Color>Opal</Color>
     <Driver>Nathaniel Pratt</Driver>
   </car>
   <car>
     <Type>Lotus Espirit</Type>
     <PlateNumber>J1I 4U6</PlateNumber>
-    <Color>black</Color>
+    <Color>Black</Color>
     <Driver>Janos Smith</Driver>
   </car>
   <car>
     <Type>Ford GT</Type>
     <PlateNumber>B2G 1R5</PlateNumber>
-    <Color>green</Color>
+    <Color>Green</Color>
     <Driver>Lawrence Whitley</Driver>
   </car>
   <car>
     <Type>Cadillac '59</Type>
     <PlateNumber>M7Z 4X9</PlateNumber>
-    <Color>blue</Color>
-    <Driver>Janos</Driver>
+    <Color>Blue</Color>
+    <Driver>Janos Lannister</Driver>
   </car>
   <car>
     <Type>Mercedes-Benz 540K</Type>
     <PlateNumber>M9A 8J5</PlateNumber>
-    <Color>red</Color>
-    <Driver>Janos</Driver>
+    <Color>Red</Color>
+    <Driver>Janos Lennon</Driver>
   </car>
   <car>
     <Type>Bugatti Type 57</Type>
     <PlateNumber>U6I 5I3</PlateNumber>
-    <Color>white</Color>
+    <Color>White</Color>
     <Driver>Hunter Baker</Driver>
   </car>
   <car>
     <Type>Dodge Viper</Type>
     <PlateNumber>Z9F 0H9</PlateNumber>
-    <Color>orange</Color>
-    <Driver>Janos</Driver>
+    <Color>Orange</Color>
+    <Driver>Janos Jobs</Driver>
   </car>
   <car>
     <Type>Volvo P1800</Type>
     <PlateNumber>Z0O 5H7</PlateNumber>
-    <Color>red</Color>
+    <Color>Red</Color>
     <Driver>Ira Wiggins</Driver>
   </car>
   <car>
     <Type>Volkswagen Karmann Ghia</Type>
     <PlateNumber>J1M 4M7</PlateNumber>
-    <Color>yellow</Color>
+    <Color>Yellow</Color>
     <Driver>Ralph Dawson</Driver>
   </car>
 </cars>

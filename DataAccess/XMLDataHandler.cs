@@ -7,7 +7,7 @@ using System.Xml.Linq;
 
 namespace DataAccess
 {
-    public class XMLDataHandler : DataHandler
+    public class XMLDataHandler : IDataHandler
     {
 
         public List<Car> SearchColor(string dataPath)
@@ -15,7 +15,7 @@ namespace DataAccess
             XElement xmlFile = XElement.Load(dataPath);
 
             var result = xmlFile.Descendants("car")
-                                .Where(c => c.Descendants("Color").FirstOrDefault().Value == "red")
+                                .Where(c => c.Descendants("Color").FirstOrDefault().Value == "Red")
                                 .Select(car => new Car(car.Descendants("Type").FirstOrDefault().Value, car.Descendants("PlateNumber").FirstOrDefault().Value, car.Descendants("Color").FirstOrDefault().Value, car.Descendants("Driver").FirstOrDefault().Value));
 
             return result.ToList();

@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccess
 {
-    public class CSVDataHandler : DataHandler
+    public class CSVDataHandler : IDataHandler
     {
         public List<Car> SearchColor(string dataPath)
         {
@@ -15,7 +12,7 @@ namespace DataAccess
 
             var redCars = csvlines.Select(line => line.Split(';'))
                 .Select(data => new Car(data[0], data[1], data[2], data[3]))
-                .Where(c => c.Color == "red").ToList();
+                .Where(c => c.Color == "Red").ToList();
 
             return redCars;
         }
