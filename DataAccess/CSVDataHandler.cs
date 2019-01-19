@@ -6,27 +6,25 @@ namespace DataAccess
 {
     public class CSVDataHandler : IDataHandler
     {
-        public List<Car> SearchColor(string dataPath)
+        public List<Car> Search(string dataPath, string descendants, string searched)
         {
             string[] csvlines = File.ReadAllLines(dataPath);
 
-            var redCars = csvlines.Select(line => line.Split(';'))
-                .Select(data => new Car(data[0], data[1], data[2], data[3]))
-                .Where(c => c.Color == "Red").ToList();
+            var cars = csvlines.Select(line => line.Split(';'))
+                .Select(data => new Car(data[0], data[1], data[2], data[3]));
 
-            return redCars;
+            if (descendants == "Color") return SearchColor(cars);
+            else return SearchDriver(cars);
         }
 
-
-        public List<Car> SearchDriver(string dataPath)
+        public List<Car> SearchColor(IEnumerable<Car> cars)
         {
-            string[] csvlines = File.ReadAllLines(dataPath);
+            return cars.Where(data => data.Color.Contains("Red")).ToList();
+        }
 
-            var driverCars = csvlines.Select(line => line.Split(';'))
-                .Select(data => new Car(data[0], data[1], data[2], data[3]))
-                .Where(c => c.Driver.Contains("Janos")).ToList();
-
-            return driverCars;
+        public List<Car> SearchDriver(IEnumerable<Car> cars)
+        {
+            return cars.Where(data => data.Driver.Contains("Janos")).ToList();
         }
     }
 }

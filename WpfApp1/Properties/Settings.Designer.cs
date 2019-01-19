@@ -18,7 +18,7 @@ namespace WpfApp1.Properties
     {
 
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-        internal object appsetting;
+        internal object appsetting = null;
 
         public static Settings Default
         {

@@ -48,13 +48,13 @@ namespace WpfApp1
 
         private void Btn1_Click(object sender, RoutedEventArgs e)
         {
-            boxFilling(DataHandler.SearchColor(DataPath));
+            boxFilling(DataHandler.Search(DataPath, "Color", "Red"));
           
         }
 
         private void Btn_Click_2(object sender, RoutedEventArgs e)
         {
-            boxFilling(DataHandler.SearchDriver(DataPath));
+            boxFilling(DataHandler.Search(DataPath, "Driver", "Janos"));
         }
     }
 }

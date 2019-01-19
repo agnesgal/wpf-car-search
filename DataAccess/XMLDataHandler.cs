@@ -10,26 +10,18 @@ namespace DataAccess
     public class XMLDataHandler : IDataHandler
     {
 
-        public List<Car> SearchColor(string dataPath)
+        public List<Car> Search(string dataPath, string descendants, string searched)
         {
             XElement xmlFile = XElement.Load(dataPath);
 
             var result = xmlFile.Descendants("car")
-                                .Where(c => c.Descendants("Color").FirstOrDefault().Value == "Red")
-                                .Select(car => new Car(car.Descendants("Type").FirstOrDefault().Value, car.Descendants("PlateNumber").FirstOrDefault().Value, car.Descendants("Color").FirstOrDefault().Value, car.Descendants("Driver").FirstOrDefault().Value));
+                                .Where(c => c.Descendants(descendants).FirstOrDefault().Value.Contains(searched))
+                                .Select(car => new Car(car.Descendants("Type").FirstOrDefault().Value,
+                                    car.Descendants("PlateNumber").FirstOrDefault().Value,
+                                    car.Descendants("Color").FirstOrDefault().Value,
+                                    car.Descendants("Driver").FirstOrDefault().Value));
 
             return result.ToList();
-        }
-
-        public List<Car> SearchDriver(string dataPath)
-        {
-            XElement xmlFile = XElement.Load(dataPath);
-
-            var result = xmlFile.Descendants("car")
-                                .Where(c => c.Descendants("Driver").FirstOrDefault().Value.Contains("Janos"))
-                                .Select(car => new Car(car.Descendants("Type").FirstOrDefault().Value, car.Descendants("PlateNumber").FirstOrDefault().Value, car.Descendants("Color").FirstOrDefault().Value, car.Descendants("Driver").FirstOrDefault().Value));
-            
-            return result.ToList();
-        }
+        } 
     }
 }
