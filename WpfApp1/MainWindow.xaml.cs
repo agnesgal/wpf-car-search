@@ -1,9 +1,11 @@
 ﻿using DataAccess;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Windows;
-    
+using System.Xml;
+
 namespace WpfApp1
 {
 
@@ -19,6 +21,33 @@ namespace WpfApp1
             if (DataPath.Split('.').Last() == "xml") DataHandler =  new XMLDataHandler();
         
             else if (DataPath.Split('.').Last() == "csv") DataHandler = new CSVDataHandler();
+
+            else
+            {
+
+                DataHandler = new DBDataHandler();
+                //var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                //var connectionStringsSection = (ConnectionStringsSection)config.GetSection("connectionStrings");
+                //connectionStringsSection.ConnectionStrings["add "].ConnectionString = "Data Source=blah;Initial Catalog=blah;UID=blah;password=blah";
+                //config.Save();
+                //ConfigurationManager.RefreshSection("connectionStrings");
+
+                //második megoldás
+                //XmlDocument XmlDoc = new XmlDocument();
+                ////Loading the Config file
+                //XmlDoc.Load(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile);
+                //// XmlDoc.Load("App.config");
+                //foreach (XmlElement xElement in XmlDoc.DocumentElement)
+                //{
+                //    if (xElement.Name == "connectionStrings")
+                //    {
+                //        //setting the coonection string
+                //        xElement.FirstChild.Attributes[0].Value = "vmi";
+                //    }
+                //}
+                ////writing the connection string in config file
+                //XmlDoc.Save(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile);
+            }
 
         }
 
@@ -47,7 +76,7 @@ namespace WpfApp1
         }
 
         private void Btn1_Click(object sender, RoutedEventArgs e)
-        {
+        {         
             boxFilling(DataHandler.Search(DataPath, "Color", "Red"));
           
         }
