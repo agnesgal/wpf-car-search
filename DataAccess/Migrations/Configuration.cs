@@ -1,9 +1,6 @@
 namespace DataAccess.Migrations
 {
-    using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<CarDBContext>
     {
@@ -50,7 +47,6 @@ namespace DataAccess.Migrations
             context.Cars.AddOrUpdate(new Car("Volkswagen T2", "GTB 331", "Green", "Janos Marley"));
             context.Cars.AddOrUpdate(new Car("Chevrolet Silverado 1500", "ABB 155", "Blue", "Alan Parrish"));
             context.Cars.AddOrUpdate(new Car("Ford F-150", "HNJ 816", "Gold", "Hannah Summers"));
-
 
             context.SaveChanges();
         }

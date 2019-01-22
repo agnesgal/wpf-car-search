@@ -1,10 +1,8 @@
 ﻿using DataAccess;
-using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Windows;
-using System.Xml;
 
 namespace WpfApp1
 {
@@ -24,15 +22,15 @@ namespace WpfApp1
 
             else
             {
-
+                //handle MSSQL data and use it for the app.config connection string refresh
                 DataHandler = new DBDataHandler();
+
                 //var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
                 //var connectionStringsSection = (ConnectionStringsSection)config.GetSection("connectionStrings");
                 //connectionStringsSection.ConnectionStrings["add "].ConnectionString = "Data Source=blah;Initial Catalog=blah;UID=blah;password=blah";
                 //config.Save();
                 //ConfigurationManager.RefreshSection("connectionStrings");
-
-                //második megoldás
+      
                 //XmlDocument XmlDoc = new XmlDocument();
                 ////Loading the Config file
                 //XmlDoc.Load(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile);
@@ -62,7 +60,7 @@ namespace WpfApp1
             for (int i = 0; i < list.Count; i++)
             {
                 string Type = "Type: " + list[i].Type;
-                string PlateNumber = "PlateNumber: " + list[i].PlateNumber;
+                string PlateNumber = "Plate Number: " + list[i].PlateNumber;
                 string Color = "Color: " + list[i].Color;
                 string Driver = "Driver: " + list[i].Driver;
                
