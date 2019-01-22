@@ -4,6 +4,9 @@ namespace DataAccess
 {
     public interface IDataHandler
     {
-        List<Car> Search(string dataPath, string descendant, string searched);
+        List<Car> SearchByRedColor();
+
+        List<Car> SearchByJanosDriver();
+
     }
 }

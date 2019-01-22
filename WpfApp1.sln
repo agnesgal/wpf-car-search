@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp", "WpfApp1\WpfApp.cs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{23208AB9-700F-41DE-B40E-08055203B6B5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess.Test", "DataAccess.Test\DataAccess.Test.csproj", "{FC6B666C-00CA-4F14-87F1-9CDDB05952A1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{23208AB9-700F-41DE-B40E-08055203B6B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23208AB9-700F-41DE-B40E-08055203B6B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23208AB9-700F-41DE-B40E-08055203B6B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC6B666C-00CA-4F14-87F1-9CDDB05952A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC6B666C-00CA-4F14-87F1-9CDDB05952A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC6B666C-00CA-4F14-87F1-9CDDB05952A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC6B666C-00CA-4F14-87F1-9CDDB05952A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

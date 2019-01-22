@@ -5,14 +5,8 @@ namespace DataAccess
 {
     public class DBDataHandler : IDataHandler
     {
-        public List<Car> Search(string dataPath, string descendant, string searched)
-        {
-            if (descendant == "Color") return SearchColor();
-            else return SearchDriver();
-        }
-
-
-        public List<Car> SearchColor()
+     
+        public List<Car> SearchByRedColor()
         {
             using (CarDBContext ctx = new CarDBContext())
             {
@@ -20,8 +14,7 @@ namespace DataAccess
             }
         }
 
-
-        public List<Car> SearchDriver()
+        public List<Car> SearchByJanosDriver()
         {
             using (CarDBContext ctx = new CarDBContext())
             {

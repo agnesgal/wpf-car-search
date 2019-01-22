@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
-        Loaded="Window_Loaded">
+       >
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="C:\Users\Codecool\source\repos\WpfApp1\WpfApp1\Resources\Background.jpg" Opacity="0.3"/>
