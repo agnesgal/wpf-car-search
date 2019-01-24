@@ -4,9 +4,8 @@ namespace DataAccess
 {
     public interface IDataHandler
     {
-        List<Car> SearchByRedColor();
+        List<Car> SearchByColor(string color);
 
-        List<Car> SearchByJanosDriver();
-
+        List<Car> SearchByDriver(string name);
     }
 }

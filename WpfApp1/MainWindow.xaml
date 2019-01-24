@@ -12,8 +12,8 @@
             <ImageBrush ImageSource="C:\Users\Codecool\source\repos\WpfApp1\WpfApp1\Resources\Background.jpg" Opacity="0.3"/>
         </Grid.Background>
 
-        <Button Name="Btn1" Content="Red Button" HorizontalAlignment="Left" Margin="394,308,0,0" VerticalAlignment="Top" Width="92" Height="51" Click="Btn1_Click"/>
-        <Button Name="Btn2" Content="Driver Button" HorizontalAlignment="Left" Margin="581,308,0,0" VerticalAlignment="Top" Width="92" Height="51" Click="Btn_Click_2"/>
+        <Button Name="Btn1" Content="Red Button" HorizontalAlignment="Left" Margin="394,308,0,0" VerticalAlignment="Top" Width="92" Height="51" Click="Button1ClickEventHandler"/>
+        <Button Name="Btn2" Content="Driver Button" HorizontalAlignment="Left" Margin="581,308,0,0" VerticalAlignment="Top" Width="92" Height="51" Click="Button2ClickEventHandler"/>
         <ListBox Name="MyBox" HorizontalAlignment="Left" Height="311" Margin="47,48,0,0" VerticalAlignment="Top" Width="257"/>
     </Grid>
 </Window>

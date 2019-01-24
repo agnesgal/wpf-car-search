@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Configuration;
+using System.IO;
 using System.Linq;
 using System.Xml.Linq;
 
@@ -9,7 +10,7 @@ namespace DataAccess
     {
         public List<Car> SearchAllCars()
         {
-            XElement xmlFile = XElement.Load(@"C:\Users\Codecool\source\repos\WpfApp1\DataAccess\Resources\XMLFile1.xml");
+            XElement xmlFile = XElement.Load(Directory.GetCurrentDirectory() + ConfigurationManager.AppSettings["XmlPath"]);
 
             var cars = xmlFile.Descendants("car")
                                 .Select(car => new Car(car.Descendants("Type").FirstOrDefault().Value,
@@ -20,15 +21,15 @@ namespace DataAccess
             return cars.ToList();
         }
 
-        public List<Car> SearchByRedColor()
+        public List<Car> SearchByColor(string color)
         {
-            return SearchAllCars().Where(c => c.Color == "Red").ToList();
+            return SearchAllCars().Where(c => c.Color == color).ToList();
 
         }
 
-        public List<Car> SearchByJanosDriver()
+        public List<Car> SearchByDriver(string name)
         {
-            return SearchAllCars().Where(c => c.Driver.Contains("Janos")).ToList();
+            return SearchAllCars().Where(c => c.Driver.Contains(name)).ToList();
         }
     }
 }

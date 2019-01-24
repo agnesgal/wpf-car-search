@@ -7,7 +7,7 @@ namespace DataAccess
         [Key]
         public int Id { get; set; }
 
-        [Required (ErrorMessage ="Car {0} is a required")]
+        [Required (ErrorMessage ="Car {0} is a required")] // TODO
         [StringLength (50, MinimumLength = 5, ErrorMessage ="Type should be between 5-25 character")]
         [DataType(DataType.Text)]
         public string Type { get; set; }

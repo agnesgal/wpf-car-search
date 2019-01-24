@@ -6,53 +6,52 @@ namespace DataAccess.Test
     [TestFixture]
     public class DataHandlerTest
     {
-       protected IDataHandler datahandler;
 
-       [Test]   
-        public void SearchByRedColorWithXml()
+        [Test]   
+        public void SearchByColorByXml()
         {
-            datahandler = new XMLDataHandler();
-            List<Car> expectedResult = datahandler.SearchByRedColor();
+            IDataHandler datahandler = new XMLDataHandler();
+            List<Car> expectedResult = datahandler.SearchByColor("Red");
             Assert.That(expectedResult, Has.Count.EqualTo(4));
         }
 
         [Test]
-        public void SearchByJanosDriveWithXml()
+        public void SearchByDriverByXml()
         {
-            datahandler = new XMLDataHandler();
-            List<Car> expectedResult = datahandler.SearchByJanosDriver();
+            IDataHandler datahandler = new XMLDataHandler();
+            List<Car> expectedResult = datahandler.SearchByDriver("Janos");
             Assert.That(expectedResult, Is.Not.Null.And.Not.Empty);
         }
 
         [Test]
-        public void SearchByRedColorWithCsv()
+        public void SearchByColorByCsv()
         {
-            datahandler = new CSVDataHandler();
-            Car expectedResult = datahandler.SearchByRedColor()[0];
-            Assert.That(expectedResult.Color, Is.EqualTo("Red"));
+            IDataHandler datahandler = new CSVDataHandler();
+            Car expectedResult = datahandler.SearchByColor("Red")[0];
+            Assert.That(expectedResult.Color, !Is.EqualTo("Blue"));
         }
 
         [Test]
-        public void SearchByJanosDriverWithCsv()
+        public void SearchByDriverByCsv()
         {
-            datahandler = new CSVDataHandler();
-            string expectedResult = datahandler.SearchByJanosDriver()[0].Driver;
+            IDataHandler datahandler = new CSVDataHandler();
+            string expectedResult = datahandler.SearchByDriver("Janos")[0].Driver;
             Assert.IsTrue(expectedResult.Contains("Janos"));
         }
 
         [Test]
-        public void SearchByRedColorWithMssql()
+        public void SearchByColorByMssql()
         {
-            datahandler = new DBDataHandler();
-            Car expectedResult = datahandler.SearchByRedColor()[0];
+            IDataHandler datahandler = new DBDataHandler(new CarDBContext());
+            Car expectedResult = datahandler.SearchByColor("Red")[0];
             Assert.IsTrue(expectedResult.Driver.Equals("Dominic West"));
         }
 
         [Test]
-        public void SearchByJanosDriverWithMssql()
+        public void SearchByDriverByMssql()
         {
-            datahandler = new DBDataHandler();
-            Car expectedResult = datahandler.SearchByJanosDriver()[5];
+            IDataHandler datahandler = new DBDataHandler(new CarDBContext());
+            Car expectedResult = datahandler.SearchByDriver("Janos")[5];
             Assert.That(expectedResult, Is.Not.Null);
         }
     }

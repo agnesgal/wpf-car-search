@@ -1,22 +1,29 @@
-﻿namespace DataAccess
+﻿using System;
+
+namespace DataAccess
 {
     public class DataHandlerFactory
     {
-        public IDataHandler manageData(string dataPath)
+        public IDataHandler CreateDataHandler(string dataSourceType)
         {
-            if (dataPath.Equals("xml"))
+            if (dataSourceType.Equals("xml"))
             {
                 return new XMLDataHandler();
             }
 
-            else if (dataPath.Equals("csv"))
+            else if (dataSourceType.Equals("csv"))
             {
                return new CSVDataHandler();
             }
 
+            else if (dataSourceType.Equals("mssql"))
+            {
+                return new DBDataHandler(new CarDBContext());
+            }
+
             else
             {
-                return new DBDataHandler();
+                throw new ArgumentException("Not a valid data resource.");
             }
         }
     }

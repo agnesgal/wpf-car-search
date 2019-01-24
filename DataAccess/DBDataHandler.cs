@@ -5,20 +5,21 @@ namespace DataAccess
 {
     public class DBDataHandler : IDataHandler
     {
-     
-        public List<Car> SearchByRedColor()
+        private CarDBContext carDBContext { get; set; }
+
+        public DBDataHandler(CarDBContext carDBContext) { this.carDBContext = carDBContext; }
+
+        public List<Car> SearchByColor(string color)
         {
-            using (CarDBContext ctx = new CarDBContext())
             {
-                return ctx.Cars.Where(s => s.Color == "Red").ToList();
+                return carDBContext.Cars.Where(s => s.Color == color).ToList();
             }
         }
 
-        public List<Car> SearchByJanosDriver()
+        public List<Car> SearchByDriver(string name)
         {
-            using (CarDBContext ctx = new CarDBContext())
             {
-                return ctx.Cars.Where(s => s.Driver.Contains("Janos")).ToList();
+                return carDBContext.Cars.Where(s => s.Driver.Contains(name)).ToList();
             }
         }
     }

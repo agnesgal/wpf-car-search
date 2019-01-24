@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp", "WpfApp1\WpfApp.csproj", "{51555F11-EEEA-456E-8D08-9FEB691D1C5D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfCarManagerUI", "WpfApp1\WpfCarManagerUI.csproj", "{51555F11-EEEA-456E-8D08-9FEB691D1C5D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{23208AB9-700F-41DE-B40E-08055203B6B5}"
 EndProject
