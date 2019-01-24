@@ -7,23 +7,23 @@ namespace DataAccess
         [Key]
         public int Id { get; set; }
 
-        [Required (ErrorMessage ="Car {0} is a required")] // TODO
-        [StringLength (50, MinimumLength = 5, ErrorMessage ="Type should be between 5-25 character")]
+        [Required]
+        [StringLength (30, MinimumLength = 5)]
         [DataType(DataType.Text)]
         public string Type { get; set; }
 
-        [Required(ErrorMessage = "Car {0} is a required")]
-        [StringLength(7, MinimumLength = 7, ErrorMessage = "PlateNumber should 7 character long")]
+        [Required]
+        [StringLength(7, MinimumLength = 7)]
         [DataType(DataType.Text)]
         public string PlateNumber { get; set; }
 
-        [Required(ErrorMessage = "Car {0} is a required")]
-        [StringLength(50, MinimumLength = 3, ErrorMessage = "Color should be between 3-10 character")]
+        [Required]
+        [StringLength(15, MinimumLength = 3)]
         [DataType(DataType.Text)]
         public string Color { get; set; }
 
-        [Required(ErrorMessage = "Car {0} is a required")]
-        [StringLength(50, MinimumLength = 5, ErrorMessage = "Driver should be between 3-10 character")]
+        [Required]
+        [StringLength(35, MinimumLength = 5)]
         [DataType(DataType.Text)]
         public string Driver { get; set; }
 

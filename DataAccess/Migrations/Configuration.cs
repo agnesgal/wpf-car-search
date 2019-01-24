@@ -34,7 +34,7 @@ namespace DataAccess.Migrations
             context.Cars.AddOrUpdate(new Car("Volvo V60", "KLM 142", "White", "George Fulton"));
             context.Cars.AddOrUpdate(new Car("Chrysler 300", "MIT 341", "Gold", "Martha Harrison"));
             context.Cars.AddOrUpdate(new Car("Nissan Maxima", "ZTQ 900", "Silver", "Janos Wilder"));
-            context.Cars.AddOrUpdate(new Car("Ford Mustang", "MKE 352", "Red", "Nikolaj Coster"));
+            context.Cars.AddOrUpdate(new Car("Ford Fusion", "MKE 352", "Red", "Nikolaj Coster"));
             context.Cars.AddOrUpdate(new Car("Toyota Avalon Hybrid", "PPQ 599", "Green", "Attila Meyer"));
             context.Cars.AddOrUpdate(new Car("Kia Rio", "BUB 555", "Pink", "Jessica Beach"));
             context.Cars.AddOrUpdate(new Car("Cadillac XTS", "NOQ 822", "Blue", "Janos Jones"));
@@ -47,6 +47,7 @@ namespace DataAccess.Migrations
             context.Cars.AddOrUpdate(new Car("Volkswagen T2", "GTB 331", "Green", "Janos Marley"));
             context.Cars.AddOrUpdate(new Car("Chevrolet Silverado 1500", "ABB 155", "Blue", "Alan Parrish"));
             context.Cars.AddOrUpdate(new Car("Ford F-150", "HNJ 816", "Gold", "Hannah Summers"));
+            context.Cars.AddOrUpdate(new Car("Ford Mustang Shelby GT350", "GWQ 255", "Red", "Eleanor Monroe"));
 
             context.SaveChanges();
         }
