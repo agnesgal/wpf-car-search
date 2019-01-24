@@ -9,7 +9,7 @@
        >
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="C:\Users\Codecool\source\repos\WpfApp1\WpfApp1\Resources\Background.jpg" Opacity="0.3"/>
+            <ImageBrush ImageSource="/Resources/Background.jpg" Opacity="0.3" />
         </Grid.Background>
 
         <Button Name="Btn1" Content="Red Button" HorizontalAlignment="Left" Margin="394,308,0,0" VerticalAlignment="Top" Width="92" Height="51" Click="Button1ClickEventHandler"/>
